@@ -1,6 +1,7 @@
 <?php
+require_once 'ModeloBase.php';
 
-class Usuario{
+class Usuario extends ModeloBase{
     public $nombre;
     public $apellidos;
     public $email;
@@ -36,9 +37,5 @@ class Usuario{
 
     function setPasword($pasword) {
         $this->pasword = $pasword;
-    }
-
-    public function conseguirTodos(){
-        return  "sacamos todos los usuarios";
     }
 }
