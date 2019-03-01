@@ -1,8 +1,9 @@
 <h1>hola</h1>
-    
 <?php
-require_once 'controllers/UsuarioController.php';
-require_once 'controllers/NotaController.php';
+
+require_once 'autoload.php';
+
+
 if (isset($_GET['controller'])){
     $nombre_controlador = $_GET['controller'].'Controller';
 } else {
