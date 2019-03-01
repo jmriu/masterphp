@@ -8,8 +8,8 @@ class ModeloBase{
     public function __construct() {
         $this->db = database::conectar();
     }
-    public function conseguirTodos(){
-        var_dump($this->db); 
-        return  "sacamos todos los usuarios";
+    public function conseguirTodos($tabla){
+        $query = $this->db->query("SELECT * FROM $tabla ORDER BY id DESC");
+        return $query;
     } 
 } 

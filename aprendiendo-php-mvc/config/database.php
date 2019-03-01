@@ -1,8 +1,10 @@
 <?php
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
+class database{
+    public static function conectar(){
+        $conexion = new mysqli("localhost", "root", "", "notas_master");
+        $conexion->query("SET NAMES 'utf8'"); 
+        
+        return $conexion;
+    }
+}
