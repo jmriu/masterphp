@@ -8,8 +8,6 @@ class NotaController{
         
         //Logica accion del controlador
         $nota = new Nota();
-        $nota->setNombre("Hola");
-        $nota->setContenido("hola mundo php-mvc");
         
         $notas = $nota->conseguirTodos('notas');
         
@@ -18,7 +16,18 @@ class NotaController{
     }
     
     public function crear(){
+        //Modelo
+        require_once 'models/nota.php';
         
+        $nota = new Nota();
+        $nota->setUsuario_id(1);
+        $nota->setTitulo("Nota desde PHP MVC");
+        $nota->setDescripcion("Descipcion de mi nota");
+        $nota->guardar();
+        
+        //echo $nota->db->error;
+        header("Location: index.php?controller=Nota&action=listar");
+                
     }
     
     public function borrar(){
